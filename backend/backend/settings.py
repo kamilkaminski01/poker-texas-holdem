@@ -14,6 +14,9 @@ DEBUG = env.bool("DEBUG")
 ALLOWED_HOSTS = ["." + host.strip() for host in env.list("ALLOWED_HOSTS")]
 
 INSTALLED_APPS = [
+    "channels",
+    "daphne",
+    "rest_framework",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -40,6 +43,7 @@ if DEBUG:
     CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = "backend.urls"
+PUBLIC_SCHEMA_URLCONF = "backend.urls_public"
 
 TEMPLATES = [
     {
@@ -118,8 +122,15 @@ USE_I18N = True
 
 USE_TZ = True
 
+STATIC_DIR = os.path.join(BASE_DIR, "/static/")
+STATICFILES_DIRS = ("./backend/static",)
+if not os.path.isdir(STATIC_DIR):
+    os.mkdir(STATIC_DIR)
 
-STATIC_URL = "static/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "/media/")
+MEDIA_URL = "/media/"
+
+STATIC_URL = "/static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
