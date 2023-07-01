@@ -10,7 +10,7 @@ recreate:
 	docker compose up --build --force-recreate
 
 superuser:
-	docker compose run backend python manage.py createsuperuser
+	docker compose run --rm backend python manage.py createsuperuser
 
 check:
 	docker compose run --rm backend isort --check-only .
@@ -34,10 +34,10 @@ pytest_module:
 	docker compose run --rm backend pytest $(module)/
 
 migrations:
-	docker compose run backend python manage.py makemigrations
+	docker compose run --rm backend python manage.py makemigrations
 
 migrate:
-	docker compose run backend python manage.py migrate
+	docker compose run --rm backend python manage.py migrate
 
 clear:
 	docker compose down -v

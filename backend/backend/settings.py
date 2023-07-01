@@ -23,6 +23,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "users",
+    "players",
+    "games",
 ]
 
 MIDDLEWARE = [
@@ -114,6 +117,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = "users.User"
+
 LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "UTC"
@@ -148,4 +153,5 @@ REST_FRAMEWORK = {
         "djangorestframework_camel_case.parser.CamelCaseMultiPartParser",
     ),
     "EXCEPTION_HANDLER": "backend.exception_handler.full_details_exception_handler",
+    "COERCE_DECIMAL_TO_STRING": False,
 }
