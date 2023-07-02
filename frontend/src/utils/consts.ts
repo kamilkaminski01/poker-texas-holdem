@@ -9,6 +9,11 @@ export const SOCKET_URL =
     ? `${socketProtocol}//${url.hostname}:8000/ws`
     : `${socketProtocol}//${url.hostname}/ws`
 
+export const ENDPOINTS = {
+  games: 'games/',
+  players: 'players/'
+}
+
 export const PATHS = {
   home: '/'
 }

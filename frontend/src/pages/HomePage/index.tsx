@@ -1,5 +1,7 @@
+import './style.scss'
+
 const HomePage = () => {
-  return <>Test</>
+  return <div className="home-page">Home Page</div>
 }
 
 export default HomePage

@@ -1,0 +1,8 @@
+@import 'utils/variables.scss';
+
+nav {
+  height: $navbar-height;
+
+  color: rgb(255, 255, 255);
+  background: $dark;
+}
