@@ -64,7 +64,9 @@ const CreateGameForm = ({ createGameData, closeForm }: CreateGameFormProps) => {
         />
 
         <button type="submit">Create Game</button>
-        <button onClick={closeForm}>Cancel</button>
+        <button type="button" onClick={closeForm}>
+          Cancel
+        </button>
       </form>
     </FormProvider>
   )

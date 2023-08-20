@@ -14,6 +14,10 @@ export const ENDPOINTS = {
   players: 'players/'
 }
 
+export const WEBSOCKETS = {
+  onlineGames: `${SOCKET_URL}/online-games/`
+}
+
 export const PATHS = {
   home: '/'
 }

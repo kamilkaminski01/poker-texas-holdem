@@ -1,6 +1,6 @@
 import { IGameData } from 'models/gameData'
 import useData from './useData'
-import { ENDPOINTS } from '../utils/consts'
+import { ENDPOINTS } from 'utils/consts'
 
 const useGameData = (options?: { dontFetchOnMount: true }) => {
   const {
