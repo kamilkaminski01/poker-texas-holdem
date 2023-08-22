@@ -14,6 +14,9 @@ def create_game_signal(sender, instance: Game, **kwargs) -> None:
         "type": "websocket_game_added_or_deleted",
         "command": "gameCreated",
         "hash": instance.hash,
+        "smallBlind": float(instance.small_blind),
+        "bigBlind": float(instance.big_blind),
+        "buyIn": instance.buy_in,
     }
     try:
         async_to_sync(channel_layer.group_send)("online_games_group", data)

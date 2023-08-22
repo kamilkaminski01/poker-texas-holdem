@@ -11,7 +11,8 @@ const Input = ({
   validators = {},
   defaultValue,
   className = '',
-  hideErrors = false
+  hideErrors = false,
+  step = 'any'
 }: InputProps) => {
   const {
     register,
@@ -33,6 +34,7 @@ const Input = ({
         data-testid={name}
         autoComplete="off"
         type={type}
+        step={step}
         defaultValue={defaultValue}
         {...register(name, validators)}
       />

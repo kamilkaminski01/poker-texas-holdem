@@ -6,6 +6,7 @@ export interface InputProps {
   hideErrors?: boolean
   className?: string
   placeholder?: string
+  step?: string
   defaultValue?: string | number | readonly string[] | undefined
   validators?: RegisterOptions
 }

@@ -39,10 +39,18 @@ class OnlineGamesConsumer(AsyncJsonWebsocketConsumer):
         await self.send_json(payload)
 
     async def websocket_game_added_or_deleted(self, event: dict) -> None:
-        field_names = ["command", "hash"]
+        field_names = ["command", "hash", "smallBlind", "bigBlind", "buyIn"]
         payload = {field: event[field] for field in field_names if field in event}
         await self.send_json(payload)
 
     @database_sync_to_async
     def get_online_games(self) -> None:
-        self.online_games = [{"hash": game.hash} for game in Game.objects.all()]
+        self.online_games = [
+            {
+                "hash": game.hash,
+                "smallBlind": float(game.small_blind),
+                "bigBlind": float(game.big_blind),
+                "buyIn": game.buy_in,
+            }
+            for game in Game.objects.all()
+        ]

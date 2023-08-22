@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import useWebSocket from 'react-use-websocket'
 import { WEBSOCKETS } from 'utils/consts'
-import { IHomePageOnlineGame } from 'pages/HomePage/models/homePageOnlineGame'
+import { IHomePageOnlineGame } from '../models/homePageOnlineGame'
 
 const useHomePageOnlineGames = () => {
   const [onlineGames, setOnlineGames] = useState<IHomePageOnlineGame[]>([])
@@ -12,8 +12,8 @@ const useHomePageOnlineGames = () => {
 
       switch (data.command) {
         case 'onlineGames':
-          if (data.onlinePokerGames) {
-            setOnlineGames(data.onlinePokerGames)
+          if (data.onlineGames) {
+            setOnlineGames(data.onlineGames)
           }
           break
         case 'gameCreated':
