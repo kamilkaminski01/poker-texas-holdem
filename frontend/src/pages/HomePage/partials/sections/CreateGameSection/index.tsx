@@ -10,7 +10,7 @@ const CreateGameSection = () => {
   return (
     <>
       <section className="create-game-section">
-        <div className="create-game__title">Create or Join a Poker Game</div>
+        <h1 className="create-game-section__title">Create or Join a Poker Game</h1>
         {!showForm && <button onClick={() => setShowForm(true)}>Create</button>}
       </section>
       {showForm && (

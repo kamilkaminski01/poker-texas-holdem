@@ -1,4 +1,5 @@
 @import 'utils/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Poppins&display=swap');
 
 * {
   margin: 0;
@@ -12,7 +13,7 @@ html {
 
 body {
   color: $carbon;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
