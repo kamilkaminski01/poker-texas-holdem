@@ -6,6 +6,7 @@ import { valid } from 'utils/Validators/validators'
 import { validSchemas } from 'utils/Validators/validatorsSchemas'
 import { handleApiResponse } from 'utils/handleApiResponse'
 import { CreateGameFormProps } from './interface'
+import Button from 'components/atoms/Button'
 
 const CreateGameForm = ({ createGameData, closeForm }: CreateGameFormProps) => {
   const methods = useForm()
@@ -34,6 +35,10 @@ const CreateGameForm = ({ createGameData, closeForm }: CreateGameFormProps) => {
   return (
     <FormProvider {...methods}>
       <form className="create-game-form" onSubmit={methods.handleSubmit(onSubmit)}>
+        <span className="create-game-form__close" onClick={closeForm}>
+          &times;
+        </span>
+        <h3 className="create-game-form__title">Create a Game</h3>
         <Input
           name="smallBlind"
           placeholder="Small Blind"
@@ -62,11 +67,9 @@ const CreateGameForm = ({ createGameData, closeForm }: CreateGameFormProps) => {
           defaultValue={4}
           validators={{ required: valid.required, ...validSchemas.seatCount }}
         />
-
-        <button type="submit">Create Game</button>
-        <button type="button" onClick={closeForm}>
-          Cancel
-        </button>
+        <Button className={'create-game-form__btn btn--outline'} onClick={() => {}}>
+          Create
+        </Button>
       </form>
     </FormProvider>
   )

@@ -9,14 +9,17 @@
   .online-games__content {
     width: 100%;
     max-width: 30em;
-    border: 1px solid $blue;
-    border-radius: 5px;
     margin: 3px;
+
+    border: 1px solid $sea;
+    border-radius: 5px;
+
     animation: fadeInUp;
     animation-duration: 1s;
 
     .online-games__title {
-      color: $blue;
+      color: $sea;
     }
+
   }
 }

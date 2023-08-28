@@ -1,0 +1,32 @@
+@import 'utils/variables.scss';
+
+.spinner {
+  display: inline-block;
+  height: 4em;
+  width: 4em;
+
+  &:after {
+    display: block;
+    height: 2.5em;
+    width: 2.5em;
+
+    margin: 0.5em;
+
+    border-radius: 50%;
+    border: 5px solid $sea;
+    border-color: $sea transparent $sea transparent;
+    animation: spinner 1.2s linear infinite;
+
+    content: " ";
+
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

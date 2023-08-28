@@ -5,6 +5,7 @@ import { IHomePageOnlineGame } from '../models/homePageOnlineGame'
 
 const useHomePageOnlineGames = () => {
   const [onlineGames, setOnlineGames] = useState<IHomePageOnlineGame[]>([])
+  const [loading, setLoading] = useState(true)
 
   useWebSocket(WEBSOCKETS.onlineGames, {
     onMessage: (message) => {
@@ -14,6 +15,7 @@ const useHomePageOnlineGames = () => {
         case 'onlineGames':
           if (data.onlineGames) {
             setOnlineGames(data.onlineGames)
+            setLoading(false)
           }
           break
         case 'gameCreated':
@@ -34,7 +36,7 @@ const useHomePageOnlineGames = () => {
     }
   })
 
-  return { onlineGames }
+  return { onlineGames, loading }
 }
 
 export default useHomePageOnlineGames

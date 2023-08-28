@@ -1,5 +1,33 @@
+@import 'utils/variables.scss';
+
 .create-game-form {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+
+  height: 36em;
+  width: 35em;
+  padding: 2em;
+
+  background-color: $sea;
+  color: white;
+
+  border-radius: 0.5rem;
+
+  .create-game-form__title {
+    font-size: 2.25em;
+  }
+
+  .create-game-form__close {
+    position: absolute;
+    right: 1%;
+    top: 0;
+
+    font-size: 2.2em;
+    line-height: 0.85;
+
+    cursor: pointer;
+  }
 }

@@ -1,0 +1,33 @@
+@import 'utils/variables.scss';
+
+.btn {
+  padding: 1em 1.75em;
+  width: 18em;
+  background-color: $snow;
+
+  border-radius: 0.75rem;
+}
+
+.btn--outline {
+  background-color: white;
+  color: $sea;
+
+  border: 1px solid $sea;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $blue;
+    color: white;
+
+    border-color: $blue;
+  }
+}
+
+.create-game-form__btn {
+  margin-top: 1.4em;
+  font-size: 1em;
+}
+
+.create-game-section__btn {
+  font-size: 1.2em;
+}

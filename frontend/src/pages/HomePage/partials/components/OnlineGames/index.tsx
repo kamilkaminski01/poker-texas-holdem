@@ -1,12 +1,15 @@
 import './style.scss'
 import useHomePageOnlineGames from 'pages/HomePage/hooks/useHomePageOnlineGames'
+import Spinner from 'components/atoms/Spinner'
 
 const OnlineGames = () => {
-  const { onlineGames } = useHomePageOnlineGames()
+  const { onlineGames, loading } = useHomePageOnlineGames()
 
   return (
     <div className="online-games">
-      {onlineGames.length === 0 ? (
+      {loading ? (
+        <Spinner />
+      ) : onlineGames.length === 0 ? (
         <p>There are no online games.</p>
       ) : (
         onlineGames.map((onlineGame) => (

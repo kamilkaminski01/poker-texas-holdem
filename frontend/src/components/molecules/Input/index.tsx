@@ -24,6 +24,9 @@ const Input = ({
 
   return (
     <div className={classNames('input-wrapper', className)}>
+      <label htmlFor={name} className="input-wrapper__label">
+        {placeholder}
+      </label>
       <input
         className={classNames('input-wrapper__input', {
           'input-wrapper__input--required': validators.required,
@@ -38,9 +41,6 @@ const Input = ({
         defaultValue={defaultValue}
         {...register(name, validators)}
       />
-      <label htmlFor={name} className="input-wrapper__label">
-        {placeholder}
-      </label>
       {!hideErrors && errors[name] && (
         <ErrorMessage message={`${errors[name]?.message}`} fieldName={name} />
       )}

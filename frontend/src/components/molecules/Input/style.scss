@@ -1,0 +1,50 @@
+@import 'utils/variables.scss';
+
+.input-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  .input-wrapper__input {
+    width: 100%;
+    padding: 0 1em;
+
+    line-height: 2.5em;
+    font-size: 1.4em;
+
+    border: 1px solid $snow;
+    border-radius: 0.5rem;
+    text-align: center;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    &:focus {
+      outline: 0;
+      border-color: $navy;
+    }
+  }
+
+  .input-wrapper__label {
+    font-size: 1.2em;
+  }
+
+  .input-wrapper__input--required ~ .input-wrapper__label::after {
+    content: '*';
+
+    position: relative;
+    left: 1px;
+
+    color: $sangria;
+  }
+
+  .input-wrapper__input--invalid {
+    border-color: $sangria !important;
+
+    & + .input-wrapper__label {
+      color: $sangria !important;
+    }
+  }
+}
