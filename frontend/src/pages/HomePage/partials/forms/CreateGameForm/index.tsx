@@ -67,9 +67,7 @@ const CreateGameForm = ({ createGameData, closeForm }: CreateGameFormProps) => {
           defaultValue={4}
           validators={{ required: valid.required, ...validSchemas.seatCount }}
         />
-        <Button className={'create-game-form__btn btn--outline'} onClick={() => {}}>
-          Create
-        </Button>
+        <Button className={'create-game-form__btn btn--outline'}>Create</Button>
       </form>
     </FormProvider>
   )

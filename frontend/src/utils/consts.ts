@@ -19,5 +19,6 @@ export const WEBSOCKETS = {
 }
 
 export const PATHS = {
-  home: '/'
+  home: '/',
+  about: 'about'
 }

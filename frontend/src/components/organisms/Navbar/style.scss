@@ -1,9 +1,21 @@
 @import 'utils/variables.scss';
 
 nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   height: $navbar-height;
-  text-align: center;
 
   color: rgb(255, 255, 255);
   background: $dark;
+  box-shadow: 0 1px 10px 0 $navy;
+
+  .nav__logo {
+    padding: 0.85em;
+  }
+
+  .nav__links {
+    padding-right: 1.25em;
+  }
 }

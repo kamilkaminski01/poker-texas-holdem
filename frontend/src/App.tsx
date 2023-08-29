@@ -4,6 +4,7 @@ import { PATHS } from 'utils/consts'
 import { Route, Routes } from 'react-router-dom'
 import HomePage from 'pages/HomePage'
 import SharedLayout from 'components/atoms/SharedLayout'
+import AboutPage from 'pages/AboutPage'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route element={<SharedLayout />}>
           <Route path={PATHS.home} element={<HomePage />} />
+          <Route path={PATHS.about} element={<AboutPage />} />
         </Route>
       </Routes>
     </div>
