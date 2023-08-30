@@ -7,8 +7,9 @@ import { validSchemas } from 'utils/Validators/validatorsSchemas'
 import { handleApiResponse } from 'utils/handleApiResponse'
 import { CreateGameFormProps } from './interface'
 import Button from 'components/atoms/Button'
+import classNames from 'classnames'
 
-const CreateGameForm = ({ createGameData, closeForm }: CreateGameFormProps) => {
+const CreateGameForm = ({ createGameData, closeForm, isFormOpen }: CreateGameFormProps) => {
   const methods = useForm()
 
   const onSubmit = async (formValues: FieldValues) => {
@@ -34,10 +35,9 @@ const CreateGameForm = ({ createGameData, closeForm }: CreateGameFormProps) => {
 
   return (
     <FormProvider {...methods}>
-      <form className="create-game-form" onSubmit={methods.handleSubmit(onSubmit)}>
-        <span className="create-game-form__close" onClick={closeForm}>
-          &times;
-        </span>
+      <form
+        className={classNames('create-game-form', { 'create-game-form__open': isFormOpen })}
+        onSubmit={methods.handleSubmit(onSubmit)}>
         <h3 className="create-game-form__title">Create a Game</h3>
         <Input
           name="smallBlind"
