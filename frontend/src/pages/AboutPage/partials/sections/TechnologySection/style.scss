@@ -1,4 +1,5 @@
 @import 'utils/variables.scss';
+@import 'utils/mixins.scss';
 
 .technology-section {
   display: flex;
@@ -10,24 +11,33 @@
     display: flex;
     align-items: center;
     max-width: 80em;
-  }
 
-  .technology-section__about {
-    padding: 3em;
-  }
 
-  .technology-section__subtitle {
-    text-transform: uppercase;
-    color: $dark;
-  }
+    .technology-section__about {
+      padding: 2em;
+    }
 
-  .technology-section__title {
-    font-weight: 400;
-    font-size: 3.25em;
-    margin: 0.25em 0;
-  }
+    .technology-section__subtitle {
+      text-transform: uppercase;
+      color: $dark;
+    }
 
-  .technology-section__description {
-    color: $gray;
+    .technology-section__title {
+      font-weight: 400;
+      font-size: 3.25em;
+      margin: 0.25em 0;
+    }
+
+    .technology-section__description {
+      color: $gray;
+    }
+
+    @include for-desktop {
+      flex-direction: column;
+
+      .technology-section__about {
+        padding-bottom: 0;
+      }
+    }
   }
 }

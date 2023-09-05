@@ -1,22 +1,30 @@
 @import 'utils/variables.scss';
+@import 'utils/mixins.scss';
 
 .floating-icons {
   position: relative;
   min-height: 32em;
   min-width: 32em;
-}
 
-.floating-icons__icon {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .floating-icons__icon {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  width: 4em;
-  height: 4em;
+    width: 4em;
+    height: 4em;
 
-  border-radius: 50%;
-  box-shadow: 0 1px 15px 0 $moon;
+    border-radius: 50%;
+    box-shadow: 0 1px 15px 0 $moon;
+  }
+
+  @include for-desktop {
+    min-height: 22em;
+    min-width: 22em;
+    width: 70%;
+    height: 70%;
+  }
 }
 
 @keyframes float {
