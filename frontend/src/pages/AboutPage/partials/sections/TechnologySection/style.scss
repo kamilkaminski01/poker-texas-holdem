@@ -1,0 +1,33 @@
+@import 'utils/variables.scss';
+
+.technology-section {
+  display: flex;
+  justify-content: center;
+
+  padding: 1em;
+
+  .technology-section__wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 80em;
+  }
+
+  .technology-section__about {
+    padding: 3em;
+  }
+
+  .technology-section__subtitle {
+    text-transform: uppercase;
+    color: $dark;
+  }
+
+  .technology-section__title {
+    font-weight: 400;
+    font-size: 3.25em;
+    margin: 0.25em 0;
+  }
+
+  .technology-section__description {
+    color: $gray;
+  }
+}

@@ -1,0 +1,29 @@
+@import 'utils/variables.scss';
+
+.floating-icons {
+  position: relative;
+  min-height: 32em;
+  min-width: 32em;
+}
+
+.floating-icons__icon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 4em;
+  height: 4em;
+
+  border-radius: 50%;
+  box-shadow: 0 1px 15px 0 $moon;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
