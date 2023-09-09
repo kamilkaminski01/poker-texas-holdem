@@ -1,13 +1,13 @@
 import './style.scss'
 import FloatingIcons from '../../components/FloatingIcons'
+import SectionTitle from '../../components/SectionTitle'
 
 const TechnologySection = () => {
   return (
-    <section className="technology-section">
-      <div className="technology-section__wrapper">
-        <div className="technology-section__about">
-          <h4 className="technology-section__subtitle">Poker Texas Hold&apos;em</h4>
-          <h2 className="technology-section__title">Technology</h2>
+    <section>
+      <div className="technology-section">
+        <div className="technology-section__wrapper">
+          <SectionTitle subtitle={"Poker Texas Hold'em"} title={'Technology'} />
           <p className="technology-section__description">
             The development of this web application relied on a versatile set of technologies and
             tools such as: Python, Django, TypeScript, React.js, Sass, PostgreSQL, AWS, Redis,

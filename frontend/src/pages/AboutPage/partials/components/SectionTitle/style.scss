@@ -1,0 +1,12 @@
+@import 'utils/variables.scss';
+
+.section-title__subtitle {
+  text-transform: uppercase;
+  color: $dark;
+}
+
+.section-title__title {
+  font-weight: 400;
+  font-size: 3.25em;
+  margin: 0.25em 0;
+}

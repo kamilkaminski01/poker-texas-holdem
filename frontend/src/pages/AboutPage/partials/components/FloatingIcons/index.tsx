@@ -1,4 +1,5 @@
 import './style.scss'
+import Icon from '../Icon'
 import Python from 'assets/icons/python.png'
 import Django from 'assets/icons/django.png'
 import TypeScript from 'assets/icons/typescript.png'
@@ -25,16 +26,14 @@ const FloatingIcons = () => {
   return (
     <div className="floating-icons">
       {icons.map((icon, index) => (
-        <div
+        <Icon
           key={index}
-          className={`floating-icons__icon icon__${icon.name}`}
-          style={{
-            left: icon.left,
-            top: icon.top,
-            animation: `float 3s infinite linear ${icon.animationDelay}`
-          }}>
-          <img src={icon.icon} alt={icon.name} />
-        </div>
+          name={icon.name}
+          left={icon.left}
+          top={icon.top}
+          animationDelay={icon.animationDelay}
+          icon={icon.icon}
+        />
       ))}
     </div>
   )

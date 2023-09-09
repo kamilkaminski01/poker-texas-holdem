@@ -3,41 +3,23 @@
 
 .technology-section {
   display: flex;
-  justify-content: center;
-
-  padding: 1em;
+  align-items: center;
+  max-width: 80em;
 
   .technology-section__wrapper {
-    display: flex;
-    align-items: center;
-    max-width: 80em;
-
-
-    .technology-section__about {
-      padding: 2em;
-    }
-
-    .technology-section__subtitle {
-      text-transform: uppercase;
-      color: $dark;
-    }
-
-    .technology-section__title {
-      font-weight: 400;
-      font-size: 3.25em;
-      margin: 0.25em 0;
-    }
+    padding: 2em;
 
     .technology-section__description {
       color: $gray;
     }
+  }
 
-    @include for-desktop {
-      flex-direction: column;
+  @include for-desktop {
+    flex-direction: column;
+    text-align: center;
 
-      .technology-section__about {
-        padding-bottom: 0;
-      }
+    .technology-section__wrapper {
+      padding-bottom: 0;
     }
   }
 }
