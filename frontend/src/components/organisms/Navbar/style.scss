@@ -17,5 +17,11 @@ nav {
 
   .nav__links {
     padding-right: 1.25em;
+
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: $moon;
+    }
   }
 }

@@ -52,5 +52,5 @@ class OnlineGamesConsumer(AsyncJsonWebsocketConsumer):
                 "bigBlind": float(game.big_blind),
                 "buyIn": game.buy_in,
             }
-            for game in Game.objects.all()
+            for game in Game.objects.all().order_by("-created_at")
         ]

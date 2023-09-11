@@ -16,12 +16,14 @@ const useHomePageOnlineGames = () => {
         case EOnlineGames.ONLINE_GAMES:
           if (data.onlineGames) {
             setOnlineGames(data.onlineGames)
-            setLoading(false)
+            setTimeout(() => {
+              setLoading(false)
+            }, 700)
           }
           break
         case EOnlineGames.GAME_CREATED:
           if (data.hash) {
-            setOnlineGames((prevOnlineGames) => [...prevOnlineGames, data])
+            setOnlineGames((prevOnlineGames) => [data, ...prevOnlineGames])
           }
           break
         case EOnlineGames.GAME_DELETED:

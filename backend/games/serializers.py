@@ -10,9 +10,12 @@ class FormattedDateTimeField(serializers.DateTimeField):
 
 
 class GameSerializer(serializers.ModelSerializer):
+    hash = serializers.ReadOnlyField()
+
     class Meta:
         model = Game
         fields = [
+            "hash",
             "small_blind",
             "big_blind",
             "buy_in",
