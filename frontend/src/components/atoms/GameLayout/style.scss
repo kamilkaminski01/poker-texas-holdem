@@ -1,0 +1,9 @@
+@import 'utils/variables.scss';
+
+.game-layout__bg{
+  position: absolute;
+  inset: 0;
+
+  background-image: url('../../../assets/images/bg-pattern.jpg');
+  background-repeat: repeat;
+}

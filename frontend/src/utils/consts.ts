@@ -20,5 +20,6 @@ export const WEBSOCKETS = {
 
 export const PATHS = {
   home: '/',
-  about: 'about'
+  about: '/about',
+  game: '/game/:hash'
 }

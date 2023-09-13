@@ -8,9 +8,12 @@ import { handleApiResponse } from 'utils/handleApiResponse'
 import { CreateGameFormProps } from './interface'
 import Button from 'components/atoms/Button'
 import classNames from 'classnames'
+import { generatePath, useNavigate } from 'react-router-dom'
+import { PATHS } from 'utils/consts'
 
 const CreateGameForm = ({ createGameData, closeForm, isFormOpen }: CreateGameFormProps) => {
   const methods = useForm()
+  const navigate = useNavigate()
 
   const onSubmit = async (formValues: FieldValues) => {
     const { smallBlind, bigBlind, buyIn, seatCount } = formValues
@@ -31,6 +34,10 @@ const CreateGameForm = ({ createGameData, closeForm, isFormOpen }: CreateGameFor
     })
 
     handleApiResponse(response, closeForm, methods.setError)
+    if (response.succeed && response.data?.hash) {
+      const path = generatePath(PATHS.game, { hash: response.data.hash })
+      navigate(path)
+    }
   }
 
   return (

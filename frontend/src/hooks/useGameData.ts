@@ -3,20 +3,11 @@ import useData from './useData'
 import { ENDPOINTS } from 'utils/consts'
 
 const useGameData = (options?: { dontFetchOnMount: true }) => {
-  const {
-    data: gameData,
-    createData: createGameData,
-    ...rest
-  } = useData<IGameData>(ENDPOINTS.games, {
-    dontFetchOnMount: options?.dontFetchOnMount,
-    dataLocation: 'items'
+  const { createData: createGameData } = useData<IGameData>(ENDPOINTS.games, {
+    dontFetchOnMount: options?.dontFetchOnMount
   })
 
-  return {
-    gameData,
-    createGameData,
-    ...rest
-  }
+  return { createGameData }
 }
 
 export default useGameData

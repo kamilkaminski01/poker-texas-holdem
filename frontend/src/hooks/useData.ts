@@ -59,11 +59,14 @@ const useData = <T, R = T, C = T>(
         setIsLoading(true)
         setIsError(false)
 
-        await axiosDefault.post(endpoint, transformRequestData ? transformRequestData(data) : data)
+        const response = await axiosDefault.post(
+          endpoint,
+          transformRequestData ? transformRequestData(data) : data
+        )
 
         if (!preventDataRefreshAfterRequest) getData()
 
-        return { succeed: true }
+        return { succeed: true, data: response.data }
       } catch (error) {
         setIsError(true)
 
