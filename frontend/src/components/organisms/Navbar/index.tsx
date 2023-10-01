@@ -1,19 +1,12 @@
 import './style.scss'
 import { Link } from 'react-router-dom'
 import { PATHS } from 'utils/consts'
+import CardLogo from 'components/atoms/CardLogo'
 
 const Navbar = () => {
   return (
     <nav>
-      <Link to={PATHS.home}>
-        <img
-          className="nav__logo"
-          width="75"
-          height="75"
-          src="https://img.icons8.com/ios-filled/75/FFFFFF/cards.png"
-          alt="cards"
-        />
-      </Link>
+      <CardLogo className={'nav__logo'} />
       <div className="nav__links">
         <Link to={PATHS.about}>About</Link>
       </div>

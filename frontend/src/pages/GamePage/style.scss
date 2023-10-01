@@ -1,16 +1,6 @@
 @import 'utils/variables.scss';
 
 .game-page {
-  display: flex;
-  justify-content: center;
-
-  color: white;
-
   animation: fadeIn;
   animation-duration: 0.4s;
-
-  .game-page__content {
-    animation: fadeIn;
-    animation-duration: 0.4s;
-  }
 }

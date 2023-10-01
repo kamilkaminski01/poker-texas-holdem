@@ -1,19 +1,12 @@
 import './style.scss'
-import { useEffect, useState } from 'react'
-import Spinner from 'components/atoms/Spinner'
+import Table from './partials/components/Table'
+import Sidebar from './partials/components/Sidebar'
 
 const GamePage = () => {
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false)
-    }, 700)
-  })
-
   return (
     <div className="game-page">
-      {loading ? <Spinner /> : <div className="game-page__content">Game Page</div>}
+      <Sidebar />
+      <Table />
     </div>
   )
 }

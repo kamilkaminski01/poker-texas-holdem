@@ -1,0 +1,46 @@
+@import 'utils/variables.scss';
+@import "utils/mixins.scss";
+
+.game-page__table {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 70em;
+  width: 60%;
+
+  animation: fadeIn;
+  animation-duration: 0.4s;
+  transition: width 1s ease;
+
+  @include for-desktop {
+    width: 50%;
+  }
+
+  .table__rail {
+    flex-grow: 1;
+    aspect-ratio: 2 / 1;
+
+    border-radius: 40%/80%;
+
+    background-image: url("~/src/assets/images/table_frame_pattern.png");
+    box-shadow: inset 0 0.32em 0.61em -0.32em $gray;
+  }
+
+  .table__felt {
+    flex-grow: 1;
+    position: absolute;
+    top: 5%;
+    left: 2.5%;
+    aspect-ratio: 21 / 10;
+    width: 95%;
+
+    border-radius: 40%/80%;
+
+    background-image: url("~/src/assets/images/table_pattern.png");
+    background-size: 100% 100%;
+    background-color: $sea;
+    box-shadow: inset 0 0.12rem 0.32rem 0.32rem $shadow-black;
+  }
+}

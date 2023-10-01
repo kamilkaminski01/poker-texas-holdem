@@ -1,5 +1,11 @@
 @import './variables.scss';
 
+@mixin for-large-desktop {
+  @media (max-width: 1200px) {
+    @content
+  }
+}
+
 @mixin for-desktop {
   @media (max-width: 1024px) {
     @content;
@@ -13,13 +19,13 @@
 }
 
 @mixin for-phone {
-  @media (max-width: 500px) {
+  @media (max-width: 480px) {
     @content;
   }
 }
 
 @mixin for-extra-small-phone {
-  @media (max-width: 400px) {
+  @media (max-width: 320px) {
     @content;
   }
 }

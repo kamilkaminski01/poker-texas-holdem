@@ -1,0 +1,26 @@
+@import 'utils/variables.scss';
+@import "utils/mixins.scss";
+
+.game-page__sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4%;
+  height: 100%;
+
+  background: $sea;
+
+  .sidebar__logo {
+    padding: 10%;
+    width: 100%;
+    height: auto;
+    transition: padding 1s ease;
+
+    @include for-desktop {
+      padding: 15%;
+    }
+  }
+}
