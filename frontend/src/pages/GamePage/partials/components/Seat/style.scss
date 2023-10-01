@@ -1,0 +1,31 @@
+@import 'utils/variables.scss';
+
+.game-page__seat {
+  position: absolute;
+  bottom: 15%;
+  left: 47%;
+  width: 6%;
+  max-width: 8em;
+
+  overflow: hidden;
+  opacity: 40%;
+  transition: opacity 0.2s ease;
+
+  border: 1px dashed $moon;
+  border-radius: 1em;
+
+  &:hover {
+    opacity: unset;
+    background: $blue;
+  }
+
+  .seat__button {
+    width: 100%;
+    aspect-ratio: 1/1;
+    font-size: min(100%, 0.9vw);
+
+    background: none;
+    border: none;
+    color: $snow;
+  }
+}

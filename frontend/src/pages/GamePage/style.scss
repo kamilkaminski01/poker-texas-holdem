@@ -1,6 +1,9 @@
 @import 'utils/variables.scss';
 
 .game-page {
+  width: 100%;
+  height: 100%;
+
   animation: fadeIn;
   animation-duration: 0.4s;
 }
