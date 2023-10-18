@@ -3,26 +3,15 @@
 version: '3.8'
 
 services:
-  db:
-    restart: always
-    image: postgres:15.3-alpine
-    env_file:
-      - .envs/.postgres
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
-
-  redis:
-    image: redis:7.0.2-alpine
-    ports:
-      - "6379:6379"
-
-  backend:
+  web:
     build:
       context: backend
       dockerfile: local.Dockerfile
     depends_on:
-      - redis
-      - db
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
     ports:
       - "8000:8000"
     volumes:
@@ -33,6 +22,19 @@ services:
     command: sh -c "python manage.py migrate &&
                     python manage.py runserver 0.0.0.0:8000"
 
+  db:
+    restart: always
+    image: postgres:15.3-alpine
+    env_file:
+      - .envs/.postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    healthcheck:
+        test: sh -c "pg_isready -U postgres"
+        interval: 3s
+        timeout: 3s
+        retries: 5
+
   frontend:
     build:
       context: frontend
@@ -42,6 +44,11 @@ services:
     volumes:
       - ./frontend:/app
       - /app/node_modules
+
+  redis:
+    image: redis:7.0.2-alpine
+    ports:
+      - "6379:6379"
 
 volumes:
   postgres_data:

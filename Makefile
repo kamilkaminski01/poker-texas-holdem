@@ -10,34 +10,34 @@ recreate:
 	docker compose up --build --force-recreate
 
 superuser:
-	docker compose run --rm backend python manage.py createsuperuser
+	docker compose run --rm web python manage.py createsuperuser
 
 check:
-	docker compose run --rm backend isort --check-only .
-	docker compose run --rm backend black --check .
-	docker compose run --rm backend flake8 .
-	docker compose run --rm backend mypy .
+	docker compose run --rm web isort --check-only .
+	docker compose run --rm web black --check .
+	docker compose run --rm web flake8 .
+	docker compose run --rm web mypy .
 
 frontcheck:
 	docker compose run --rm -T frontend npm run check
 
 lint:
-	docker compose run --rm -T backend isort .
-	docker compose run --rm -T backend black .
-	docker compose run --rm -T backend flake8 .
-	docker compose run --rm -T backend mypy .
+	docker compose run --rm -T web isort .
+	docker compose run --rm -T web black .
+	docker compose run --rm -T web flake8 .
+	docker compose run --rm -T web mypy .
 
 pytest:
-	docker compose run --rm backend pytest
+	docker compose run --rm web pytest
 
 pytest_module:
-	docker compose run --rm backend pytest $(module)/
+	docker compose run --rm web pytest $(module)/
 
 migrations:
-	docker compose run --rm backend python manage.py makemigrations
+	docker compose run --rm web python manage.py makemigrations
 
 migrate:
-	docker compose run --rm backend python manage.py migrate
+	docker compose run --rm web python manage.py migrate
 
 clear:
 	docker compose down -v
